@@ -9,11 +9,11 @@ from email.mime.image import MIMEImage
 from email.mime.text import MIMEText
 from email.header import Header
 
-stu_number = ['1190200916']  # 学号
-stu_password = ['chengyuan123']  # 密码
-stu_name = 'ChengYuan'  # 附件加上同学名字首写字母前缀，用以区分。不必须
-sender = '2426124027@qq.com'
-receiver = '2426124027@qq.com'
+stu_number = ['1234567890']  # 学号
+stu_password = ['password']  # 密码
+stu_name = 'name'  # 附件加上同学名字首写字母前缀，用以区分。不必须
+sender = '12345678@qq.com'
+receiver = '12345678@qq.com'
 password_email = 'pgbffekxejqwebjc'
 # 输入webdriver放置的路径
 driver_url = r"A:\\MyEdgeDriver\\msedgedriver.exe"
