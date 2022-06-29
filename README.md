@@ -22,21 +22,21 @@ https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
 
 注意查看版本，下载对应版本的驱动器：
 
-![1](.\readmeAssets/1.png)
+![1](./readmeAssets/1.png)
 
 ## 3.开启qq邮箱设置：
 
 如果不想要发送邮件，可以跳过这一步
 
-![2](.\readmeAssets/2.png)
+![2](./readmeAssets/2.png)
 
 然后下拉
 
-![3](.\readmeAssets/3.png)
+![3](./readmeAssets/3.png)
 
 按照要求发送短信，记住密码
 
-![4](.\readmeAssets/4.png)
+![4](./readmeAssets/4.png)
 
 ## 4.文件配置：
 ### 修改DaliyReport.py的14-20行
@@ -81,7 +81,7 @@ pyinstaller -F ./DailyReport.py
 ```
 默认生成在从dist文件夹中，拖出来到和DailyReport.py同一个文件夹即可
 
-![5](.\readmeAssets/5.png)
+![5](./readmeAssets/5.png)
 ### 2.自动运行
 #### 这里可以设置开机自启动
 将DailyReport.exe生成快捷方式
