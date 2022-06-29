@@ -8,7 +8,7 @@
 ### 更新内容
 - 增加了出校申请功能
 - 修复了一些卡住的bug
-- 增加了一个日志记录文集,每日成功上报之后再次进入程序会提示并退出，可以选择是否出校申请，可以选择是否邮件提醒
+- 增加了一个日志记录文件,每日成功上报之后再次进入程序会提示并退出，可以选择是否出校申请，可以选择是否邮件提醒
 - 完善配置说明，并且加入到readme文件中
 - 删除了配置说明.pdf和.vscoede
 
@@ -39,7 +39,7 @@ https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
 ![4](./readmeAssets/4.png)
 
 ## 4.文件配置：
-### 修改DaliyReport.py的14-20行
+### 修改DaliyReport.py的14-21行
 ```python
 #需要修改
 stu_number = ['1234567890']  # 学号
@@ -50,6 +50,7 @@ receiver = '12345678@qq.com'
 password_email = 'pgbffekxejqwebjc' #授权码
 # 输入webdriver放置的路径
 driver_url = r"A:\\MyEdgeDriver\\msedgedriver.exe"
+Reason='吃饭'
 ```
 更改自己学工平台的学号和密码，以及qq邮箱
 

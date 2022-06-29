@@ -19,6 +19,7 @@ receiver = '12345678@qq.com'
 password_email = 'pgbffekxejqwebjc'
 # 输入webdriver放置的路径
 driver_url = r"A:\\MyEdgeDriver\\msedgedriver.exe"
+Reason='吃饭'
 
 # 新增文件读取，确定上次上报的日期
 dateRecorder=open('dateRecorder.txt','r',encoding='utf-8')
@@ -111,7 +112,7 @@ if needGoOutRequst=='需要出校申请':
     time.sleep(1)
     #填写出校事由
     whyGoOut = driver.find_element_by_xpath('//*[@id="cxly"]')
-    whyGoOut.send_keys('吃饭')
+    whyGoOut.send_keys(Reason)
     time.sleep(0.1)
     # 点击我已仔细阅读并同意
     driver.find_element_by_xpath('//*[@id="checkbox1"]').click()
