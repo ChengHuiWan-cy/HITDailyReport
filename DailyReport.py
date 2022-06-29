@@ -13,17 +13,17 @@ import sys
 #需要修改
 stu_number = ['1234567890']  # 学号
 stu_password = ['password']  # 密码
-stu_name = 'name'  # 附件加上同学名字首写字母前缀，用以区分。不必须
-sender = '12345678@qq.com'
-receiver = '12345678@qq.com'
-password_email = 'pgbffekxejqwebjc'
-# 输入webdriver放置的路径
+stu_name = 'name'  # 你的姓名的拼音，仅用来命名截图，可以不改，这里不要用中文
+sender = '12345678@qq.com' # 你的邮箱
+receiver = '12345678@qq.com' # 你的邮箱
+password_email = 'pgbffekxejqwebjc' #授权码
+# 输入下载的edgedriver放置的路径，建议使用双斜杠
 driver_url = r"A:\\MyEdgeDriver\\msedgedriver.exe"
-Reason='吃饭'
+Reason='吃饭' #出校申请的理由
 
 # 新增文件读取，确定上次上报的日期
 dateRecorder=open('dateRecorder.txt','r',encoding='utf-8')
-lastDate=dateRecorder.readline()
+lastDate=dateRecorder.readline()[:-1]
 current_date = time.strftime("20%y-%m-%d",
                              time.localtime(time.time()))
 needGoOutRequst=dateRecorder.readline()[:-1]
@@ -35,6 +35,7 @@ if current_date==lastDate:
     sys.exit()
 
 driver = webdriver.Edge(executable_path=driver_url)
+driver.find_element_by_xpath
 # 访问网址
 url_login = "https://ids.hit.edu.cn/authserver/login?service=https%3A%2F%2Fxg.hit.edu.cn%2Fzhxy-xgzs%2Fcommon%2FcasLogin%3Fparams%3DL3hnX21vYmlsZS94c0hvbWU%3D"
 driver.get(url_login)
@@ -159,6 +160,10 @@ if needEmail=='需要发送邮件':
     file = open(picture_location, 'rb')
     img = MIMEImage(file.read())
     file.close()
+    img.add_header('Content-ID', '<image1>')
+    # 添加图片
+    message.attach(img)
+    # 选择用qq SMTP/IMTP发送
     smtp_server = 'smtp.qq.com'
     server = smtplib.SMTP_SSL(smtp_server)
     # 465为SMTP端口号（绝大多数）
@@ -169,10 +174,6 @@ if needEmail=='需要发送邮件':
     server.sendmail(sender, receiver, message.as_string())
     # 关闭服务器
     server.quit()
-    img.add_header('Content-ID', '<image1>')
-    # 添加图片
-    message.attach(img)
-    # 选择用qq SMTP/IMTP发送
 
 # 写入日志文件
 dateRecorder=open('dateRecorder.txt','w',encoding='utf-8')
