@@ -109,6 +109,8 @@ if needGoOutRequst=='需要出校申请':
     #选择出校日期
     driver.find_element_by_xpath('//*[@id="rqlscx"]').click()
     time.sleep(1)
+    driver.find_element_by_xpath('/html/body/div[11]/div[2]/div[2]/div[3]/div[3]/div[2]').click()
+    time.sleep(0.5)
     driver.find_element_by_xpath('//*[@id="weui-picker-confirm"]').click()
     time.sleep(1)
     #填写出校事由
